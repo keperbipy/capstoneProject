@@ -1,0 +1,21 @@
+{% extends 'accountsBase.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+	<h2>Login</h2>
+	<form method="POST" id = "loginForm">
+		{% csrf_token %}
+		<div class = "loginInput">
+			<input type="input" class="form-control" name="username" id="inputEmail" autocomplete="off" required >
+			<span>Username:</span>
+		</div>
+		<div class = "loginInput">
+			<input type="password" class="form-control" name="password" id="inputPass" required>
+			<span>Password:</span>
+		</div>
+		<button type="submit" style="opacity: 1 !important;">Login</button>
+		<a href="../password_reset">Reset Password</a>
+		<a href="../signup">Sign Up</a>
+	</form>
+{% endblock %}
