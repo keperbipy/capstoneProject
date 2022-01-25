@@ -8,6 +8,7 @@
 
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="{% static 'sidebar.js' %}" defer></script>
 
@@ -21,14 +22,15 @@
 
 
     <div class="mainContainer">
-        <div id="sidebar">
+        <div id="sidebar" class="unselectable">
             <div class="sidebarHeader">
                 <i class="fas fa-project-diagram"></i><span class="collapsable"> CAPSTONE</span>
             </div>
 
             <div class="sidebarMenu">
-                <div class="sidebarMenuItem">
+                <div class="sidebarMenuItem" id="homeLink" onclick="location.href='{% url 'home' %}';">
                     <i class="fas fa-home"></i><span class="collapsable"> Home</span>
+
                 </div>
 
             </div>
@@ -57,30 +59,30 @@
                     <label for="search-box"><span class="fas fa-search search-icon"></span></label>
                     <input type="submit" id="search-submit" />
                 </form>
-            
+
                 <div class="profileButton  dropdown">
                     <div class="dropbtn">
-                    <div class="imgContainer">
-                        <img src="{% static 'default.png' %}" alt="" srcset="">
+                        <div class="imgContainer">
+                            <img src="{% static 'default.png' %}" alt="" srcset="">
+                        </div>
+                        <div class="profileUser">
+                            <span>{{ user.username }}</span><span>&nbsp; &#9660;</span>
+                        </div>
                     </div>
-                    <div class="profileUser">
-                        <span>USER</span><span>&nbsp; &#9660;</span>
+
+                    <div class="dropdown-content">
+                        <a href="{% url 'profile' %}">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="{% url 'logout' %}">Log Out</a>
+
                     </div>
                 </div>
 
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-   
-                    </div>
-                 </div>
-               
 
 
 
 
-                 <div class="headerSpacer"></div>
+                <div class="headerSpacer"></div>
             </div>
 
 

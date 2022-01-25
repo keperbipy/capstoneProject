@@ -1,0 +1,74 @@
+{% extends 'base.html' %} {% block title %} Profile{% endblock %} {% block content %} {% if user.is_authenticated %} {% load static %}
+<div class="contentWrapper">
+
+    <h1>Profile</h1>
+
+    <div id="profileCard">
+        <div id="publicProfile">
+
+            <img src="{% static 'default.png' %}" alt="">
+            <i class="fas fa-pen"></i>
+            <h2>Josh Miller</h2>
+        </div>
+        <div class="verticalDivider"></div>
+
+        <div class="personalInfo">
+            <form method="POST" id="profileForm" autocomplete="off">
+                {% csrf_token %}
+
+
+                <div class="leftSideProfile">
+                    <div class="loginInput">
+                        <input type="input" class="form-control" name="username" id="inputEmail" placeholder="Full Name:" autocomplete="off" required>
+                        <!--<span>Username:</span>-->
+                    </div>
+                    <div class="loginInput">
+                        <input type="password" class="form-control" name="password" placeholder="Birthday:" id="inputPass" autocomplete="new-password" required>
+                        <!--<span>Username:</span>-->
+                    </div>
+                </div>
+
+
+                <div class="rightSideProfile">
+                    <div class="loginInput">
+                        <input type="input" class="form-control" name="username" id="inputEmail" placeholder="Email:" autocomplete="off" required>
+                        <!--<span>Username:</span>-->
+                    </div>
+                    <div class="loginInput">
+                        <input type="password" class="form-control" name="password" id="inputPass" placeholder="Phone:" required>
+                        <!--<span>Username:</span>-->
+                    </div>
+                </div>
+
+
+                <div class="editRestProfile">
+                    <button type="submit" style="opacity: 1 !important;">Edit</button><button type="submit" style="opacity: 1 !important;">Save</button>
+                </div>
+
+
+            </form>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+{% else %} {% endif %} {% endblock %}
