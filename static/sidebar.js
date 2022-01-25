@@ -12,3 +12,9 @@ $("#collapser").click(function() {
     }
 
 });
+
+document.addEventListener("touchstart", function(){}, true);
+
+$(".dropdown-content").width($(".dropbtn").width() +32);
+
+

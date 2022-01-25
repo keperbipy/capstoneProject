@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>{% block title %}Base{% endblock %}</title>
 
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="{% static 'sidebar.js' %}" defer></script>
@@ -38,10 +39,63 @@
         </div>
 
         <div id="wrapper">
+
+
+
+
+
+
+
+
+
+
             <div id="header">
                 <i class="fas fa-bars" id="collapser"></i>
+                <div class="headerSpacer"></div>
+                <form class="search-container" action="#">
+                    <input id="search-box" type="text" class="search-box" name="q" />
+                    <label for="search-box"><span class="fas fa-search search-icon"></span></label>
+                    <input type="submit" id="search-submit" />
+                </form>
+            
+                <div class="profileButton  dropdown">
+                    <div class="dropbtn">
+                    <div class="imgContainer">
+                        <img src="{% static 'default.png' %}" alt="" srcset="">
+                    </div>
+                    <div class="profileUser">
+                        <span>USER</span><span>&nbsp; &#9660;</span>
+                    </div>
+                </div>
 
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+   
+                    </div>
+                 </div>
+               
+
+
+
+
+                 <div class="headerSpacer"></div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div id="content">
 
                 {% block content %} {% endblock %}
